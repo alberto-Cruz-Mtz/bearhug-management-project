@@ -14,7 +14,7 @@ export default function Header() {
     }, [toogle]);
 
     return (
-        <header className="flex w-full justify-between gap-1 py-2 px-3.5">
+        <header className="flex w-full justify-between gap-1 py-2 px-3.5 h-10s border-b-1 border-slate-900 dark:border-white sticky top-0 bg-cyan-50 dark:bg-neutral-800 z-10">
             <Logo urlImage={Icon} title="Bearhug Management"/>
             <Switch
                 isSelected={toogle}

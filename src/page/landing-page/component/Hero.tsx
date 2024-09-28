@@ -7,21 +7,21 @@ export function Hero({title, textContent, textButtons, urlImage}: {
     urlImage: string
 }) {
     return (
-        <section className="px-5 md:py-11 lg:flex lg:px-10">
-            <article className="text-center flex flex-col gap-4 md:gap-6 lg:text-left lg:w-3/6 lg:my-auto">
-                <h1 className="text-xl font-bold md:text-4xl lg:text-3xl">{title}</h1>
-                <p className="md:text-2xl md:w-4/5 md:mx-auto lg:mx-0 lg:text-base lg:w-full">{textContent}</p>
-                <div className="flex justify-center gap-5 lg:justify-normal">
-                    <Button color="primary" variant="shadow">
+        <section className="h-[90svh] flex flex-col lg:flex-row items-center lg:px-8">
+            <article className="text-center flex flex-col gap-5 md:gap-7 py-4 px-3">
+                <h1 className="font-bold text-2xl md:text-3xl lg:text-2xl xl:text-3xl">{title}</h1>
+                <h2 className="text-lg md:text-xl lg:text-sm xl:text-lg">{textContent}</h2>
+                <div className="flex gap-5 justify-center">
+                    <Button size="sm" color="primary" variant="shadow">
                         {textButtons[0]}
                     </Button>
-                    <Button variant="ghost">
+                    <Button size="sm" variant="ghost">
                         {textButtons[1]}
                     </Button>
                 </div>
             </article>
-            <figure className="lg:max-w-lg lg:w-full lg:mx-auto md:w-4/5 md:mx-auto">
-                <img className="object-cover object-center rounded" src={urlImage} alt="image-content"/>
+            <figure className="h-2/5 md:h-3/6 lg:h-full grid place-items-center">
+                <img className="w-2/3 md:w-3/5" src={urlImage} alt="image-content"/>
             </figure>
         </section>
     )

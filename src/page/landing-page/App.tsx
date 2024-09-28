@@ -1,19 +1,18 @@
 import Header from "./component/Header.tsx";
-import {Hero} from "./component/Hero.tsx";
+import { Hero } from "./component/Hero.tsx";
 import Computer from './assets/image/computer.png';
-import HeaderLayout from "./layout/HeaderLayout.tsx";
+import { TEXT_CONTENT, TITLE } from "./constant/landing-page-info.ts";
+import Content from "./component/Content.tsx";
+import Pricing from "./component/Pricing.tsx";
 
-export function App() {
+
+export default function App() {
     return (
         <>
-            <HeaderLayout>
-                <Header/>
-                <Hero title="Bienvenido a BEARHUG el mejor gestor de almacenes en la nube"
-                      textContent="¿Estás cansado de perder información importante debido a fallos en tus dispositivos o sistemas locales? ¡No te preocupes más! Nuestra aplicación de Gestión de Almacenes en la Nube está aquí para ayudarte."
-                      textButtons={["Registrate", "Inicia sesión"]}
-                      urlImage={Computer}
-                />
-            </HeaderLayout>
+            <Header />
+            <Hero title={TITLE} textContent={TEXT_CONTENT} textButtons={["Registrate ahora", "inicia sesión"]} urlImage={Computer} />
+            <Content />
+            <Pricing />
         </>
     )
 }

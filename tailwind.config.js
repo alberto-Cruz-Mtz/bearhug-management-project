@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      height:{ 
+        '10s': '10svh'
+      }
     },
   },
   darkMode: "class",
