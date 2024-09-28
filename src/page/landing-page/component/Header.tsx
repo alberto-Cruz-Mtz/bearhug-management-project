@@ -1,31 +1,27 @@
-import { Switch } from "@nextui-org/switch";
+import {Switch} from "@nextui-org/switch";
 import SunIcon from "../../../core/icons/SunIcon";
 import MoonIcon from "../../../core/icons/MoonIcon";
-import { useEffect, useState } from "react";
 import Logo from "../../../core/components/Logo";
-import Icon from './../../../../public/logo.png'
+import useDarkTheme from "../../../core/hook/useDarkTheme.ts";
 
-export default function Header() {
+export default function Header({logo}: { logo: string }) {
 
-    const [toogle, setToogle] = useState(true);
-
-    useEffect(() => {
-        document.documentElement.classList.toggle("dark", toogle);
-    }, [toogle]);
+    const {toogle, changeTheme} = useDarkTheme()
 
     return (
-        <header className="flex w-full justify-between gap-1 py-2 px-3.5 h-10s border-b-1 border-slate-900 dark:border-white sticky top-0 bg-cyan-50 dark:bg-neutral-800 z-10">
-            <Logo urlImage={Icon} title="Bearhug Management"/>
+        <header
+            className="flex w-full justify-between gap-1 py-2 px-3.5 h-10s shadow-md dark:shadow-gray-800 sticky top-0 bg-cyan-50 dark:bg-neutral-800 z-10">
+            <Logo urlImage={logo} title="Bearhug Management"/>
             <Switch
                 isSelected={toogle}
-                onValueChange={setToogle}
+                onValueChange={changeTheme}
                 size="md"
                 color="primary"
-                thumbIcon={({ isSelected, className }) =>
+                thumbIcon={({isSelected, className}) =>
                     isSelected ? (
-                        <SunIcon className={className} />
+                        <SunIcon className={className}/>
                     ) : (
-                        <MoonIcon className={className} />
+                        <MoonIcon className={className}/>
                     )
                 }
             >
