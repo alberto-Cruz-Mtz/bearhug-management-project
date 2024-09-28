@@ -6,7 +6,7 @@ export default function TeamCard({urlImage,name,  rol, description}: {urlImage: 
                 <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
                      src={urlImage}/>
                 <div className="flex-grow sm:pl-8">
-                    <h2 className="title-font font-medium text-lg text-white">{name}</h2>
+                    <h2 className="title-font font-medium text-lg dark:text-white">{name}</h2>
                     <h3 className="text-gray-500 mb-3">{rol}</h3>
                     <p className="mb-4">{description}</p>
                     <span className="inline-flex">
