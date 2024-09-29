@@ -2,8 +2,8 @@ import {Input} from "@nextui-org/input";
 import {Button} from "@nextui-org/button";
 import {useMemo, useState} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@nextui-org/popover";
-import GitHubIcon from "../../icon/GitHubIcon.tsx";
-import GoogleIcon from "../../icon/GoogleIcon.tsx";
+import GitHubIcon from "../icon/GitHubIcon.tsx";
+import GoogleIcon from "../icon/GoogleIcon.tsx";
 
 export default function Form() {
 
@@ -18,7 +18,7 @@ export default function Form() {
     }, [value]);
 
     return (
-        <form onSubmit={(e) => e.preventDefault()} className="py-3 px-2.5 w-full grid gap-4 mt-6 md:w-2/3 mx-auto">
+        <form onSubmit={(e) => e.preventDefault()} className="py-3 px-2.5 w-full grid gap-4 mt-6 md:w-2/3 mx-auto lg:mt-0">
             <h1 className="text-3xl text-center font-bold">Crea tu cuenta</h1>
             <Input type="email"
                    value={value}
@@ -30,6 +30,7 @@ export default function Form() {
                    errorMessage="Please enter a valid email"
             />
             <Input type="password" variant="bordered" label="Password"/>
+            <span className="text-center text-gray-500">O registrate con tu cuenta de:</span>
             <div className="flex gap-4">
                 <Popover placement="top" offset={15} backdrop="blur">
                     <PopoverTrigger>
