@@ -1,8 +1,8 @@
 import {Switch} from "@nextui-org/switch";
-import SunIcon from "../../../core/icons/SunIcon";
-import MoonIcon from "../../../core/icons/MoonIcon";
-import Logo from "../../../core/components/Logo";
-import useDarkTheme from "../../../core/hook/useDarkTheme.ts";
+import SunIcon from "../icons/SunIcon.tsx";
+import MoonIcon from "../icons/MoonIcon.tsx";
+import Logo from "./Logo.tsx";
+import useDarkTheme from "../hook/useDarkTheme.ts";
 
 export default function Header({logo}: { logo: string }) {
 

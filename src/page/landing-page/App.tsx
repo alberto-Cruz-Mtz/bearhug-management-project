@@ -1,4 +1,4 @@
-import Header from "./component/Header.tsx";
+import Header from "../../core/components/Header.tsx";
 import {Hero} from "./component/Hero.tsx";
 import Computer from './assets/image/computer.png';
 import {TEXT_CONTENT, TITLE} from "./constant/landing-page-info.ts";
@@ -56,7 +56,7 @@ export default function App() {
                 <PricingCard price={PricingInfo.ULTIMATE_PLAN.price} plan={PricingInfo.ULTIMATE_PLAN.title} features={PricingInfo.ULTIMATE_PLAN.features} isPopular={false}/>
             </SectionContent>
             <SectionContent title="Nuestro equipo" textContent={text} layout="flex">
-                <TeamCard urlImage="https://i0.wp.com/www.adiario.mx/wp-content/uploads/2023/05/arnold-schwarzenegger.png" name="Alexis Garcia" rol="Project Manager" description={text2}/>
+                <TeamCard urlImage="https://images3.alphacoders.com/132/1322715.png" name="Alexis Garcia" rol="Project Manager" description={text2}/>
                 <TeamCard urlImage="https://i.pinimg.com/564x/29/60/7b/29607bf1879a361905dfa20f7e1a4be8.jpg" name="Dariana Nahomi" rol="Designer" description={text2}/>
                 <TeamCard urlImage="https://vignette1.wikia.nocookie.net/peaky-blinders/images/f/f5/Peaky_Tommy_Shelby.jpg/revision/latest?cb=20141013005757" name="Jassiel Mauricio" rol="Database Administrator" description={text2}/>
                 <TeamCard urlImage="https://unavatar.io/github/unknow" name="José Alberto" rol="Full-Stack Developer" description={text2}/>

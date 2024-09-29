@@ -12,7 +12,7 @@ export function Hero({title, textContent, textButtons, urlImage}: {
                 <h1 className="font-bold text-2xl md:text-3xl lg:text-2xl xl:text-3xl">{title}</h1>
                 <h2 className="text-lg md:text-xl lg:text-sm xl:text-lg">{textContent}</h2>
                 <div className="flex gap-5 justify-center">
-                    <Button size="sm" color="primary" variant="shadow">
+                    <Button size="sm" color="primary" variant="shadow" onPress={() => window.location.href="/public/sign-up.html"}>
                         {textButtons[0]}
                     </Button>
                     <Button size="sm" variant="ghost">
