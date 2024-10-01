@@ -1,10 +1,24 @@
-import AuthForm from "./auth/component/AuthForm.tsx";
-import AuthLayout from "./auth/layout/AuthLayout";
+import { logInMessage} from "./auth/constant/messageAuth.ts";
+import AlertModal from "./auth/component/AlertModal.tsx";
 
 export default function Demo() {
     return (
-        <AuthLayout>
-            <AuthForm text_action="inicia sesión" title="Iniciar Sesion" text_button="Registrar" />
-        </AuthLayout>
+        <>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <p>ldfjsdfadddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            <AlertModal isOpen={true} text_content={logInMessage}/>
+        </>
     )
 }

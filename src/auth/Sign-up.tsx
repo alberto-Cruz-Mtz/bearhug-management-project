@@ -5,7 +5,7 @@ import image from './images/Coding.png';
 export default function SignUp() {
     return (
         <AuthLayout urlImage={image}>
-            <AuthForm text_action="registrate" title="Iniciar Sesion" text_button="Registrar" />
+            <AuthForm message="signup" text_action="registrate" title="Iniciar Sesion" text_button="Registrar" />
         </AuthLayout>
     )
 }
