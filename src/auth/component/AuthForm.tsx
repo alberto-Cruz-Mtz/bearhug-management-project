@@ -1,7 +1,7 @@
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
-import GithubIcon from "../icon/GithubIcon";
-import GoogleIcon from "../icon/GoogleIcoin";
+import GithubIcon from "./../icon/GitHubIcon.tsx";
+import GoogleIcon from "./../icon/GoogleIcoin.tsx";
 import ButtonPopover from "./ButtonPopover";
 import {FormEvent, useState} from "react";
 import AlertModal from "./AlertModal.tsx";
