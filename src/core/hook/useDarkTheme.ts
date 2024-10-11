@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function useDarkTheme() {
 
@@ -10,7 +10,7 @@ export default function useDarkTheme() {
     const [toogle, setToogle] = useState(getInitialTheme);
 
     useEffect(() => {
-        window.localStorage.setItem('theme', toogle ? 'dark': 'light');
+        window.localStorage.setItem('theme', toogle ? 'dark' : 'light');
         document.documentElement.classList.toggle("dark", toogle);
     }, [toogle])
 
@@ -18,5 +18,5 @@ export default function useDarkTheme() {
         setToogle(prevState => !prevState);
     }, [])
 
-    return {toogle, changeTheme };
+    return { toogle, changeTheme };
 }
