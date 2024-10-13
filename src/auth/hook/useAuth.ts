@@ -1,48 +1,56 @@
-import {AuthCredentials, authRequest} from "../AuthRequest.ts";
-import { useState} from "react";
+import {useState} from "react";
 
-export default function useAuth({endpoint, method}: authRequest){
-    const [authResponse, setResponse] = useState<object | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<null | string>(null);
+interface credential {
+    username: string;
+    password: string;
+}
 
-    const prepareCredential = ({username, password}: AuthCredentials) : object => {
-        if (method === 'SIGN-UP') {
+const API_BASE_URL = "http://localhost:8080/auth";
+
+export default function useAuth(endpoint: string) {
+
+    const [error, setError] = useState(false);
+
+
+    const prepareCredential = (credential: credential) => {
+        const {username, password} = credential;
+        if (username === "" || password === "") return null;
+
+        if(endpoint === "/sign-up") {
             return {
-                username: username,
-                password: password,
-                roleRequest: {
-                    roleListName: ['INVITED']
-                }
+                "username": username,
+                "password": password,
+                roleRequest: { roleListName: ["INVITED"] }
             }
         }
-
-        return {username: username, password: password};
-    }
-
-    const submitCredentials = async ({username, password}: AuthCredentials) => {
-        const preparedCredentials = prepareCredential({username, password});
-        setLoading(true);
-        setError(null);
-        prepareCredential({username, password})
-
-        try {
-            const response = await fetch(endpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(preparedCredentials)
-            });
-            const data = await response.json();
-            setResponse(data);
-        } catch (err){
-            console.log(err);
-            setError('Something went wrong');
-        } finally {
-            setLoading(false);
+        return {
+            "username": username,
+            "password": password
         }
     }
 
-    return { authResponse, submitCredentials, loading, error };
+    const authenticate = async (credential: credential) => {
+        const request = prepareCredential(credential);
+        if(!request) return false;
+
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(request)
+        });
+
+        if (!response.ok) {
+            setError(true);
+            return false;
+        }
+
+        const data = await response.json();
+        console.log(data);
+        window.localStorage.setItem('jwt', data.status)
+        return data.jwt;
+    };
+
+    return {authenticate, error};
 }

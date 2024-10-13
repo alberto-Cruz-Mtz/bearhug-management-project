@@ -1,6 +1,6 @@
-export default function Footer({ logo, nameCompany }: { logo: string, nameCompany: string }) {
+export default function Footer({ logo, nameCompany, style }: { logo: string, nameCompany: string, style?: string}) {
     return (
-        <footer className="text-gray-400 body-font">
+        <footer className={"text-gray-400 body-font " + style}>
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <a className="flex title-font font-medium items-center md:justify-start justify-center text-slate-900 dark:text-white">
                     <img className="w-20 h-20 p-2" src={logo} alt="logo" />

@@ -1,16 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./page/landing-page/LandingPage";
-import SignUp from "./auth/Sign-up";
-import LogIn from "./auth/Log-in";
-import Demo from "./Demo";
+import LogIn from "./auth/LogIn.tsx";
+import SignUp from "./auth/SignUp.tsx";
 
 export default function App() {
     return (
         <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/sign-up" element={<SignUp />} />
             <Route path="/log-in" element={<LogIn />} />
-            <Route path="/demo" element={<Demo />} />
+            <Route path="/sign-up" element={<SignUp />}/>
         </Routes>
     )
 }
