@@ -34,7 +34,7 @@ export default function AuthForm({typeAuthenticate}: {typeAuthenticate: "/log-in
     const authenticationSuccessfulMessage = typeAuthenticate === '/sign-up' ? signUpMessage : logInMessage;
 
     return (
-        <form id="form1" className="py-5 px-8 grid gap-1.5 min-h-96" onSubmit={onSubmit}>
+        <form id="form1" className="py-5 px-8 grid gap-1.5 min-h-96 md:w-2/3 md:mx-auto lg:w-1/3 lg:mx-0" onSubmit={onSubmit}>
             <h1 className="text-center font-bold text-2xl">Bienvenido</h1>
             <Input variant="bordered" color={errors.username ? "danger" : "primary"} label="email" type="email" {...register("username",  {
                 required:true
