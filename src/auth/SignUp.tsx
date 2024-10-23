@@ -9,7 +9,7 @@ export default function SignUp(){
     return(
         <>
             <Header logo={logo} />
-            <LayoutForm form={<AuthForm typeAuthenticate="/sign-up"/>} urlImage={image} />
+            <LayoutForm form={<AuthForm action="sign-up" />} urlImage={image} />
             <Footer logo={logo} nameCompany="Bearhug Management" />
         </>
     );

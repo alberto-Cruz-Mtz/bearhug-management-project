@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 interface credential {
     username: string;
     password: string;
@@ -9,20 +7,10 @@ const API_BASE_URL = "http://localhost:8080/auth";
 
 export default function useAuth(endpoint: string) {
 
-    const [error, setError] = useState(false);
-
-
     const prepareCredential = (credential: credential) => {
         const {username, password} = credential;
         if (username === "" || password === "") return null;
 
-        if(endpoint === "/sign-up") {
-            return {
-                "username": username,
-                "password": password,
-                roleRequest: { roleListName: ["INVITED"] }
-            }
-        }
         return {
             "username": username,
             "password": password
@@ -33,7 +21,7 @@ export default function useAuth(endpoint: string) {
         const request = prepareCredential(credential);
         if(!request) return false;
 
-        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+        const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -41,16 +29,23 @@ export default function useAuth(endpoint: string) {
             body: JSON.stringify(request)
         });
 
-        if (!response.ok) {
-            setError(true);
-            return false;
+        const data = await response.json();
+
+        if (response.status === 409 || response.status === 404) return data;
+
+        if (response.status === 400) {
+            const {password, username} = data;
+            const message = !!username ? `${password} y ${username}.` : password;
+            return {
+                message: message,
+                error: "Error en los datos"
+            }
         }
 
-        const data = await response.json();
-        console.log(data);
-        window.localStorage.setItem('jwt', data.status)
-        return data.jwt;
+
+        window.localStorage.setItem("jwt", data.jwt);
+        return data;
     };
 
-    return {authenticate, error};
+    return {authenticate};
 }

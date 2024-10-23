@@ -11,8 +11,11 @@ export default {
   ],
   theme: {
     extend: {
-      height:{ 
+      height: {
         '10s': '10svh'
+      },
+      gridTemplateRows: {
+        layout: "auto 1fr auto",
       }
     },
   },

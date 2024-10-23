@@ -4,34 +4,40 @@ import {GithubIcon} from "../icon/GithubIcon.tsx";
 import {GoogleIcon} from "../icon/GoogleIcon.tsx";
 import ButtonPopover from "./ButtonPopover.tsx";
 import {useForm} from "react-hook-form";
-import AlertModal from "./AlertModal.tsx";
-import {logInMessage, signUpMessage} from "../constant/messageAuth.ts";
-import {useState} from "react";
 import {messageGithub, messageGoogle} from "../constant/messageAuthOther.ts";
-import {errorLogIn, errorSignUp} from "../constant/messageErrorAuth.ts";
 import useAuth from "../hook/useAuth.ts";
+import {useState} from "react";
+import AlertModal from "./AlertModal.tsx";
+import {LOG_IN_MESSAGE, SIGN_UP_MESSAGE} from "../constant/messageAuth.ts";
 
 type Inputs = {
     username: string
     password: string
 }
 
-export default function AuthForm({typeAuthenticate}: {typeAuthenticate: "/log-in"|"/sign-up"}) {
+type Errors = {
+    message: string
+    error: string
+}
+
+export default function AuthForm({action}: {action: "log-in"|"sign-up"}) {
 
     const {register, handleSubmit, formState: {errors}} = useForm<Inputs>();
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-    const {authenticate, error} = useAuth(typeAuthenticate);
+    const [errorAuth, setErrorAuth] = useState<Errors | null>(null);
+    const {authenticate} = useAuth(action)
 
-    const onSubmit = handleSubmit((data) => {
+    const onSubmit = handleSubmit( async (data) => {
         authenticate(data).then(response => {
-            setIsAuthenticated(!!response);
-        }).catch(error => {
-            console.error("Error during authentication", error);
+            if(response.error) {
+                setErrorAuth(response)
+                return
+            }
+            setIsAuthenticated(response.isAuthenticated);
         });
     })
 
-    const errorMessage = typeAuthenticate === '/sign-up' ? errorSignUp : errorLogIn;
-    const authenticationSuccessfulMessage = typeAuthenticate === '/sign-up' ? signUpMessage : logInMessage;
+    const authenticationSuccessfulMessage = action === 'sign-up' ? SIGN_UP_MESSAGE: LOG_IN_MESSAGE;
 
     return (
         <form id="form1" className="py-5 px-8 grid gap-1.5 min-h-96 md:w-2/3 md:mx-auto lg:w-1/3 lg:mx-0" onSubmit={onSubmit}>
@@ -41,14 +47,16 @@ export default function AuthForm({typeAuthenticate}: {typeAuthenticate: "/log-in
             })}/>
             <Input variant="bordered" color={errors.password ? "danger" : "primary"} label="password" type="password" {...register("password", {
                     required: true,
+                    minLength: 8,
+                    maxLength: 16
             })}/>
             <fieldset className="grid grid-cols-2 gap-1.5">
                 <ButtonPopover icon={<GithubIcon/>} message={messageGithub} />
                 <ButtonPopover icon={<GoogleIcon/>} message={messageGoogle} />
             </fieldset>
             <Button type="submit" color="primary" form="form1">enviar</Button>
+            <AlertModal title={errorAuth?.error} message={errorAuth?.message} isOpen={!!errorAuth} />
             <AlertModal title={authenticationSuccessfulMessage.title} message={authenticationSuccessfulMessage.message} isOpen={isAuthenticated} />
-            <AlertModal title="Algo Salio Mal" message={errorMessage} isOpen={error} />
         </form>
     )
 }

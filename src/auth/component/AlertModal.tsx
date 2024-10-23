@@ -3,9 +3,9 @@ import {Popover, PopoverContent, PopoverTrigger} from "@nextui-org/popover";
 import {JSX} from "react";
 
 interface TextContent {
-    title: string;
-    message: string;
-    isOpen: boolean;
+    title?: string;
+    message?: string;
+    isOpen?: boolean;
     icon?: JSX.Element;
 }
 
@@ -13,7 +13,7 @@ export default function AlertModal({title, message, isOpen, icon}: TextContent) 
 
     const handleClick = () => window.location.reload();
     return(
-        <Popover backdrop="blur" isOpen={isOpen} className="w-[90%] mx-auto md:w-1/2">
+        <Popover backdrop="blur" isOpen={isOpen} className="min-w-72 w-[90%] mx-auto md:w-1/2">
             <PopoverTrigger >
                 <label></label>
             </PopoverTrigger>
