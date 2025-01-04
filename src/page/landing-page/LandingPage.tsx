@@ -9,7 +9,6 @@ import TeamCard from "./component/TeamCard.tsx";
 import PricingCard from "./component/PricingCard.tsx";
 
 import Computer from "./assets/image/computer.png";
-import lock from "./assets/svg/lock.svg";
 
 import {
   feature,
@@ -42,7 +41,6 @@ export default function LandingPage() {
         {feature.map((element) => (
           <ContentCard
             key={element.title}
-            urlImage={lock}
             title={element.title}
             description={element.description}
           />

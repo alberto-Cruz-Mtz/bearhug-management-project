@@ -39,6 +39,7 @@ export default function Hero({
           <Link to="/log-in">
             <Button
               size="sm"
+              color="primary"
               variant="ghost"
               onPress={() =>
                 (window.location.href = "./../../../../public/login.html")

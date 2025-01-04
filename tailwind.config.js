@@ -18,6 +18,10 @@ export default {
         layout: "auto 1fr auto",
       },
     },
+    colors: {
+      light: "#F8FAFC",
+      dark: "#3f3b3b",
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
