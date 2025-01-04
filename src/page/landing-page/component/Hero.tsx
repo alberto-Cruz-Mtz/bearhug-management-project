@@ -1,17 +1,19 @@
 import { Button } from "@nextui-org/button";
 import { Link } from "react-router-dom";
 
+interface HeroProps {
+  title: string;
+  textContent: string;
+  textButtons: string[];
+  urlImage: string;
+}
+
 export default function Hero({
   title,
   textContent,
   textButtons,
   urlImage,
-}: {
-  title: string;
-  textContent: string;
-  textButtons: string[];
-  urlImage: string;
-}) {
+}: HeroProps) {
   return (
     <section className="h-[90svh] flex flex-col lg:flex-row items-center lg:px-8">
       <article className="text-center flex flex-col gap-5 md:gap-7 py-4 px-3">
