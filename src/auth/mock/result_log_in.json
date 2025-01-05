@@ -1,6 +1,0 @@
-{
-  "username": "labestia@example.com",
-  "message": "User logged in successfully",
-  "status": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYWJlc3RpYUBleGFtcGxlLmNvbSIsIm5iZiI6MTcyODc3NTgxMCwiaXNzIjoiQVVUSDBKV1QtQkFDS0VORCIsImV4cCI6MTcyODc3NjExMCwiaWF0IjoxNzI4Nzc1ODEwLCJhdXRob3JpdGllcyI6IlJPTEVfSU5WSVRFRCIsImp0aSI6ImQ0ZjU0NzMxLTkyNzItNGFiOC1iM2RkLWVlZDE0YzVmZmRlZCJ9.sy4RMsaQ-NsP3pbaZh-XSo5fXsn0v-SEqAOsxMov9pw",
-  "jwt": true
-}

@@ -1,13 +1,16 @@
-import { createRoot } from "react-dom/client";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import './index.css'
-import { NextUIProvider } from "@nextui-org/system";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import App from './App.tsx'
+import { BrowserRouter } from 'react-router-dom'
+import {NextUIProvider} from "@nextui-org/system";
 
-createRoot(document.getElementById("root")!).render(
-    <NextUIProvider>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </NextUIProvider>
-);
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <NextUIProvider>
+          <App />
+      </NextUIProvider>
+    </BrowserRouter>
+  </StrictMode>,
+)

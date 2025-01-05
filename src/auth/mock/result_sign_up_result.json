@@ -1,6 +1,0 @@
-{
-  "username": "tito@example.com",
-  "message": "User created successfully",
-  "status": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjb20uYmVhcmh1Zy5wZXJzaXN0ZW5jZS5lbnRpdHkuVXNlckVudGl0eUA0MGQ4MGFiMiIsIm5iZiI6MTcyODc3NTU4MywiaXNzIjoiQVVUSDBKV1QtQkFDS0VORCIsImV4cCI6MTcyODc3NTg4MywiaWF0IjoxNzI4Nzc1NTgzLCJhdXRob3JpdGllcyI6IlJPTEVfSU5WSVRFRCIsImp0aSI6IjFmYmYzMmVjLTFlOTctNGI5YS1iOWU4LTNlZTgyMzBiYzM2YyJ9.oSdAXKyWf2WMwuIdyj9pMRO3BkYrYrn4vVhn9ZfnX9U",
-  "jwt": true
-}
