@@ -1,4 +1,4 @@
-import { Bar, DarkModeButton } from "../../components";
+import { Bar, DarkModeButton } from "../../core/components";
 import { Form } from "./components/Form";
 import logo from "./../../../public/logo.png";
 import image from "./images/Password.png";

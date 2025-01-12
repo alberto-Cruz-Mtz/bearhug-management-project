@@ -1,4 +1,4 @@
-import { supabase } from "../../services/supabase.service";
+import { supabase } from "../../core/services/supabase.service";
 
 export async function signUpNewUser(email: string, password: string) {
   const { data, error } = await supabase.auth.signUp({
@@ -20,4 +20,13 @@ export async function redirectToResetPassword(email: string) {
 
 export async function resetPassword(newPassword: string) {
   await supabase.auth.updateUser({ password: newPassword });
+}
+
+export async function signInWithEmail(email: string, password: string) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: password,
+  });
+
+  return { data, error };
 }
