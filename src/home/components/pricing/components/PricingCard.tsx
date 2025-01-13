@@ -45,7 +45,11 @@ export default function PricingCard({
             </li>
           ))}
         </ul>
-        <Button variant="ghost" color="primary" className="mx-auto  w-2/3">
+        <Button
+          variant={isPopular ? "shadow" : "ghost"}
+          color="primary"
+          className="mx-auto  w-2/3"
+        >
           Obtener Ahora
         </Button>
       </blockquote>

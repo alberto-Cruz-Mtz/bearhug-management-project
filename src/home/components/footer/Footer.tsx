@@ -18,7 +18,9 @@ export default function Footer({ logo }: FooterProps) {
         />
         <h5 className="text-xl font-bold">Bearhug Management</h5>
       </figure>
-      <h6>©{year} Bearhug Management. Todos los derechos reservados</h6>
+      <h6 className="text-center">
+        ©{year} Bearhug Management. Todos los derechos reservados
+      </h6>
       <ul className="flex gap-4 pt-4 justify-center items-center">
         <li>
           <a href="#">
