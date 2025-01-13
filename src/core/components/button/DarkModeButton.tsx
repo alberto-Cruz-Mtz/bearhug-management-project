@@ -6,7 +6,7 @@ export const DarkModeButton = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <Button size="sm" isIconOnly color="primary" onClick={toggleDarkMode}>
+    <Button size="sm" isIconOnly color="primary" onPress={toggleDarkMode}>
       {isDarkMode ? <MoonIcon /> : <SunIcon />}
     </Button>
   );

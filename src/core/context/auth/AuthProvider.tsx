@@ -15,7 +15,12 @@ export default function AuthProvider({ children }: Props) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "INITIAL_SESSION" || event === "SIGNED_IN") {
+      console.log(event);
+      // if (event === "INITIAL_SESSION") {
+      //   navigate("/");
+      // }
+
+      if (event === "SIGNED_IN") {
         navigate("/dashboard");
         setSession(session);
         console.log("data session", session);

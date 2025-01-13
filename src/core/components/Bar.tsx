@@ -16,7 +16,7 @@ export const Bar = ({ image, children }: Props) => {
           width={50}
           height={50}
         />
-        <p className="hidden lg:inline">Bearhug Management</p>
+        <p className="hidden lg:inline font-bold">Bearhug Management</p>
       </figure>
       <div className="flex items-center gap-2">{children}</div>
     </header>
