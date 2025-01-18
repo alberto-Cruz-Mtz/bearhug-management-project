@@ -1,6 +1,5 @@
 import { Button } from "@heroui/button";
 import { VerifiedEmail } from "./components/verified_email/VerifiedEmail.tsx";
-import { Link } from "react-router";
 import AuthLayout from "./layout/AuthLayout";
 import logo from "./../../public/logo.png";
 import image from "./images/Data Cloud.png";
@@ -9,6 +8,7 @@ import { FormValues } from "./components/form/model/form_schema";
 import { Bar, DarkModeButton } from "../core/components";
 import { useState } from "react";
 import { DataType } from "./interfaces/AuthResponse.ts";
+import { Link } from "@heroui/link";
 
 export default function SignUp() {
   const [sendEmail, setSendEmail] = useState(false);
@@ -33,11 +33,15 @@ export default function SignUp() {
   return (
     <>
       <Bar image={logo}>
-        <Link to="/auth/login">
-          <Button size="sm" color="primary" variant="ghost">
-            inicia sesión
-          </Button>
-        </Link>
+        <Button
+          as={Link}
+          href="/auth/signup"
+          size="sm"
+          color="primary"
+          variant="ghost"
+        >
+          registrate
+        </Button>
         <DarkModeButton />
       </Bar>
       <AuthLayout title="Registrate" image={image} service={signUp} />
