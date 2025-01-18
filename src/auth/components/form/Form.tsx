@@ -3,8 +3,6 @@ import InputForm from "./components/InputForm.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { formSchema, FormValues } from "./model/form_schema.ts";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ButtonProgress } from "./components/ButtonProgress.tsx";
-import { useState } from "react";
 
 interface Props {
   service: (data: FormValues) => void;
