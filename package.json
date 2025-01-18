@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroui/popover": "^2.3.9",
     "@hookform/resolvers": "3.10.0",
     "@nextui-org/button": "^2.2.9",
     "@nextui-org/image": "^2.2.5",
