@@ -15,6 +15,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
 
   const signUp = (data: FormValues) => {
+    setSendEmail(true);
     signUpNewUser(data.email, data.password)
       .then((response) => {
         if (response.error) {
@@ -23,7 +24,6 @@ export default function SignUp() {
           const dataResponse: DataType = response.data;
           console.log(dataResponse);
           setEmail(dataResponse.user?.email ?? "username");
-          setSendEmail(true);
         }
       })
       .catch((error) => {
@@ -41,9 +41,7 @@ export default function SignUp() {
         <DarkModeButton />
       </Bar>
       <AuthLayout title="Registrate" image={image} service={signUp} />
-      {sendEmail && (
-        <VerifiedEmail username={email} isVerifiedEmail={sendEmail} />
-      )}
+      <VerifiedEmail isVerifiedEmail={sendEmail} username={email} />
     </>
   );
 }

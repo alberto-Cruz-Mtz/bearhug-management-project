@@ -3,6 +3,8 @@ import InputForm from "./components/InputForm.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { formSchema, FormValues } from "./model/form_schema.ts";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ButtonProgress } from "./components/ButtonProgress.tsx";
+import { useState } from "react";
 
 interface Props {
   service: (data: FormValues) => void;
@@ -19,7 +21,7 @@ export const Form = ({ service }: Props) => {
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
-    service(data);
+    setTimeout(() => service(data), 1000);
   };
 
   return (
@@ -55,7 +57,7 @@ export const Form = ({ service }: Props) => {
         color="primary"
         variant="shadow"
       >
-        Iniciar
+        iniciar
       </Button>
     </form>
   );

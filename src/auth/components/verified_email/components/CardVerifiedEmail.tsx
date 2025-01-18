@@ -8,7 +8,7 @@ export const CardVerifiedEmail = ({ username }: Props) => {
   const domain = username.substring(username.indexOf("@") + 1);
 
   return (
-    <article className="w-[300px] shadow-xl px-6 py-8 text-center border-1 border-gray-400 rounded-lg">
+    <article className="w-[300px] shadow-xl px-6 py-8 text-center">
       <header>
         <h6 className="font-bold text-2xl">Verificación de Correo</h6>
       </header>
