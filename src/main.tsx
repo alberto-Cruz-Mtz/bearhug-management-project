@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import {BrowserRouter} from "react-router";
-import {NextUIProvider} from "@nextui-org/system";
+import {HeroUIProvider} from "@heroui/system";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <BrowserRouter>
-          <NextUIProvider>
+          <HeroUIProvider>
               <App />
-          </NextUIProvider>
+          </HeroUIProvider>
       </BrowserRouter>
   </StrictMode>,
 )

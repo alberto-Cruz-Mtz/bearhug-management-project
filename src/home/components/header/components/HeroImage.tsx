@@ -1,6 +1,6 @@
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
 import { Wave } from "./Wave";
-import { Link } from "react-router";
 
 interface Props {
   image: string;
@@ -20,16 +20,24 @@ export default function HeroImage({ image }: Props) {
           aplicación de Gestión de Almacenes en la Nube está aquí para ayudarte.
         </p>
         <div className="flex justify-center gap-10">
-          <Link to="/auth/signup">
-            <Button variant="shadow" color="primary" className="w-[150px]">
-              Registrate ahora
-            </Button>
-          </Link>
-          <Link to="/auth/login">
-            <Button variant="shadow" className="w-[150px] ">
-              Inicia sesión
-            </Button>
-          </Link>
+          <Button
+            as={Link}
+            href="/auth/signup"
+            variant="shadow"
+            color="primary"
+            className="w-[150px]"
+          >
+            Registrate ahora
+          </Button>
+
+          <Button
+            as={Link}
+            href="/auth/login"
+            variant="shadow"
+            className="w-[150px] "
+          >
+            Inicia sesión
+          </Button>
         </div>
       </article>
       <figure className="w-[500px] hidden lg:block z-10">

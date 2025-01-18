@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { MoonIcon, SunIcon } from "./IconButton.tsx";
 import useDarkMode from "./useDarkMode.ts";
 

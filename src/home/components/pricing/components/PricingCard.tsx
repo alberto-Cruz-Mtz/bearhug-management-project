@@ -1,5 +1,5 @@
 import CheckIcon from "./../icons/CheckIcon";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 
 interface PricingCardProps {
   title: string;

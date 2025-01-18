@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import Home from "./home/Home.tsx";
 import AuthProvider from "./core/context/auth/AuthProvider.tsx";
-import { CircularProgress } from "@nextui-org/progress";
+import { CircularProgress } from "@heroui/progress";
 
 const Login = lazy(() => import("./auth/Login.tsx"));
 const SignUp = lazy(() => import("./auth/SignUp.tsx"));

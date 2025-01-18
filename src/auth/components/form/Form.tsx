@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import InputForm from "./components/InputForm.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { formSchema, FormValues } from "./model/form_schema.ts";

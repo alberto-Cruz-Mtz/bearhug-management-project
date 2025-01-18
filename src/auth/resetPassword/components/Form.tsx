@@ -1,7 +1,7 @@
-import { Input } from "@nextui-org/input";
+import { Input } from "@heroui/input";
 import { FormEvent } from "react";
 import { resetPassword } from "../../services/auth.service";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 
 export const Form = () => {
   const handleSUbmit = (event: FormEvent<HTMLFormElement>) => {

@@ -1,4 +1,4 @@
-import { Input } from "@nextui-org/input";
+import { Input } from "@heroui/input";
 import { Control, Controller, FieldError } from "react-hook-form";
 import { FormValues } from "../model/form_schema.ts";
 

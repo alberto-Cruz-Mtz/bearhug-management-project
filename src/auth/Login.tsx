@@ -1,6 +1,6 @@
 import logo from "./../../public/logo.png";
 import { Link } from "react-router"
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import AuthLayout from "./layout/AuthLayout";
 import image from "./images/Authentication.png";
 import { Bar, DarkModeButton } from "../core/components";

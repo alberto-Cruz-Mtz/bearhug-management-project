@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { VerifiedEmail } from "./components/verified_email/VerifiedEmail.tsx";
 import { Link } from "react-router";
 import AuthLayout from "./layout/AuthLayout";

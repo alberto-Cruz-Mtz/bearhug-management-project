@@ -1,6 +1,6 @@
 import { Popover, PopoverTrigger, PopoverContent } from "@heroui/popover";
 import { CardVerifiedEmail } from "./components/CardVerifiedEmail.tsx";
-import { CircularProgress } from "@nextui-org/progress";
+import { CircularProgress } from "@heroui/progress";
 
 interface Props {
   username: string;
