@@ -1,4 +1,5 @@
 import logo from "./../../public/logo.png";
+import { Link } from "react-router"
 import { Button } from "@nextui-org/button";
 import AuthLayout from "./layout/AuthLayout";
 import image from "./images/Authentication.png";
@@ -24,9 +25,11 @@ export default function Login() {
   return (
     <>
       <Bar image={logo}>
-        <Button size="sm" color="primary" variant="ghost">
-          inicia sesión
-        </Button>
+        <Link to="/auth/signup">
+          <Button size="sm" color="primary" variant="ghost">
+            registrate 
+          </Button>
+        </Link>
         <DarkModeButton />
       </Bar>
       <AuthLayout service={login} title="Inicia Sesión" image={image} />
