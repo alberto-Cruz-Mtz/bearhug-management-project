@@ -35,7 +35,7 @@ export default function SignUp() {
       <Bar image={logo}>
         <Button
           as={Link}
-          href="/auth/signup"
+          href="/auth/login"
           size="sm"
           color="primary"
           variant="ghost"
