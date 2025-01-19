@@ -2,7 +2,8 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import Home from "./home/Home.tsx";
 import AuthProvider from "./core/context/auth/AuthProvider.tsx";
-import { CircularProgress } from "@heroui/progress";
+import Loading from "./core/components/Loading.tsx";
+import { ThemeProvider } from "./core/context/theme/ThemeProvider.tsx";
 
 const Login = lazy(() => import("./auth/Login.tsx"));
 const SignUp = lazy(() => import("./auth/SignUp.tsx"));
@@ -13,28 +14,22 @@ const Dashboard = lazy(() => import("./dashboard/Dashboard.tsx"));
 
 export default function App() {
   return (
-    <Suspense
-      fallback={
-        <CircularProgress
-          color="primary"
-          className="absolute mx-auto"
-          aria-label="Loading..."
-        />
-      }
-    >
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <AuthProvider>
+    <ThemeProvider>
+      <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/auth">
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<SignUp />} />
-            <Route path="reset-password" element={<ResetPassword />} />
-          </Route>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Home />} />
         </Routes>
-      </AuthProvider>
-    </Suspense>
+        <AuthProvider>
+          <Routes>
+            <Route path="/auth">
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="reset-password" element={<ResetPassword />} />
+            </Route>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </AuthProvider>
+      </Suspense>
+    </ThemeProvider>
   );
 }

@@ -1,13 +1,13 @@
 import { Button } from "@heroui/button";
 import { MoonIcon, SunIcon } from "./IconButton.tsx";
-import useDarkMode from "./useDarkMode.ts";
+import { useThemeContext } from "../../context/theme/ThemeContext.ts";
 
 export const DarkModeButton = () => {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { isDarkTheme, toogleTheme } = useThemeContext();
 
   return (
-    <Button size="sm" isIconOnly color="primary" onPress={toggleDarkMode}>
-      {isDarkMode ? <MoonIcon /> : <SunIcon />}
+    <Button size="sm" isIconOnly color="primary" onPress={toogleTheme}>
+      {isDarkTheme ? <MoonIcon /> : <SunIcon />}
     </Button>
   );
 };
