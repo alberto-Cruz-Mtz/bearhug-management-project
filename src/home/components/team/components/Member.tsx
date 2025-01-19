@@ -1,6 +1,6 @@
 import { Image } from "@heroui/image";
 import { FacebookIcon, GithubIcon, TwitterIcon } from "../../../icon";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface Props {
   name: string;
