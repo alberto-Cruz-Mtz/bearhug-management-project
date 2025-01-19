@@ -1,5 +1,6 @@
 import { Image } from "@heroui/image";
 import { FacebookIcon, GithubIcon, TwitterIcon } from "../../../icon";
+import { delay, motion } from "framer-motion";
 
 interface Props {
   name: string;
@@ -16,8 +17,19 @@ export const Member = ({
   socialMediaUrl,
   description,
 }: Props) => {
+  const variants = {
+    hidden: { opacity: 0, scale: 0 }, // Antes de entrar en la vista
+    visible: { opacity: 1, scale: 1, transition: { duration: 1, delay: 0.2 } }, // Animación al mostrarse
+  };
+
   return (
-    <article className="inline-flex flex-col md:flex-row items-center p-4">
+    <motion.article
+      className="inline-flex flex-col md:flex-row items-center p-4"
+      initial="hidden" // Estado inicial (oculto)
+      whileInView="visible" // Cambia a visible cuando entra en la vista
+      viewport={{ once: true, amount: 0.2 }} // Control de cuándo inicia la animación
+      variants={variants} // Asociamos las variantes
+    >
       <figure>
         <Image
           radius="full"
@@ -54,6 +66,6 @@ export const Member = ({
           </li>
         </ul>
       </blockquote>
-    </article>
+    </motion.article>
   );
 };
