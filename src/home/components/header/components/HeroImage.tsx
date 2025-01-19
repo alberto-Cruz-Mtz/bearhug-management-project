@@ -8,12 +8,6 @@ interface Props {
 }
 
 export default function HeroImage({ image }: Props) {
-  const transition = {
-    duration: 0.8,
-    delay: 0.5,
-    ease: [0, 0.71, 0.2, 1.01],
-  };
-
   return (
     <main className="h-[90svh] flex justify-center items-center px-10 md:pt-8 gap-12">
       <Wave />
@@ -30,7 +24,6 @@ export default function HeroImage({ image }: Props) {
         >
           Bienvenido a BEARHUG el mejor gestor de almacenes en la nube
         </motion.h1>
-
         <motion.p
           className="text-lg"
           initial={{ opacity: 0 }}
@@ -78,11 +71,14 @@ export default function HeroImage({ image }: Props) {
       <motion.figure
         animate={{ y: -50, opacity: 1 }}
         initial={{ opacity: 0, y: 0 }}
-        transition={transition}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className="w-[500px] hidden lg:block z-10"
       >
-        <figure className="w-[500px] hidden lg:block z-10">
-          <img className="object-cover object-center" src={image} alt="hero" />
-        </figure>
+        <img className="object-cover object-center" src={image} alt="hero" />
       </motion.figure>
     </main>
   );
