@@ -1,6 +1,6 @@
 import { Input } from "@heroui/input";
 import { Control, Controller, FieldError } from "react-hook-form";
-import { FormValues } from "../model/form_schema.ts";
+import { FormValues } from "../../auth/components/form/model/form_schema.ts";
 
 interface Props {
   type: string;

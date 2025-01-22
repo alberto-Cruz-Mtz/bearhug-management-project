@@ -1,3 +1,5 @@
+import { InitialDashboard } from "./components/initialDashboard/InitialDashboard";
+
 export default function Dashboard() {
-  return <div>Bienvenido</div>;
+  return <InitialDashboard />;
 }

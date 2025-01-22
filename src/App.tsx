@@ -4,6 +4,7 @@ import Home from "./home/Home.tsx";
 import AuthProvider from "./core/context/auth/AuthProvider.tsx";
 import Loading from "./core/components/Loading.tsx";
 import { ThemeProvider } from "./core/context/theme/ThemeProvider.tsx";
+import Dev from "./dev/Dev.tsx";
 
 const Login = lazy(() => import("./auth/Login.tsx"));
 const SignUp = lazy(() => import("./auth/SignUp.tsx"));
@@ -18,6 +19,7 @@ export default function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/dev" element={<Dev />} />
         </Routes>
         <AuthProvider>
           <Routes>
