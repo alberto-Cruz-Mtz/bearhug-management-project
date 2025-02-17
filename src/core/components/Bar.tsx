@@ -3,11 +3,16 @@ import { ReactNode } from "react";
 interface Props {
   image: string;
   children: ReactNode;
+  isFixed: boolean;
 }
 
-export const Bar = ({ image, children }: Props) => {
+export const Bar = ({ image, children, isFixed }: Props) => {
+  const style = isFixed ? "top-0 fixed w-full z-50" : "";
+
   return (
-    <header className="h-[10svh] flex items-center justify-between px-3 border-b-2 border-gray-300">
+    <header
+      className={`h-[10svh] ${style} bg-black flex items-center justify-between px-3`}
+    >
       <figure className="flex items-center gap-2">
         <img
           src={image}
@@ -16,7 +21,9 @@ export const Bar = ({ image, children }: Props) => {
           width={50}
           height={50}
         />
-        <p className="hidden lg:inline font-bold">Bearhug Management</p>
+        <p className="hidden text-white lg:inline font-bold">
+          Bearhug Management
+        </p>
       </figure>
       <div className="flex items-center gap-2">{children}</div>
     </header>
