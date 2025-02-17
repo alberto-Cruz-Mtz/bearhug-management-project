@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface Props {
   image: string;
   children: ReactNode;
-  isFixed: boolean;
+  isFixed?: boolean;
 }
 
 export const Bar = ({ image, children, isFixed }: Props) => {
