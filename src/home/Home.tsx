@@ -4,7 +4,6 @@ import { Features } from "./components/features/Features";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import { Princing } from "./components/pricing/Princing";
-import { Team } from "./components/team/Team";
 import { Video } from "./components/video/Video";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <Video />
       <Features />
       <Princing />
-      <Team />
       <Footer logo={logo} />
     </>
   );
